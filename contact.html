@@ -6,6 +6,33 @@
     <title>Contact</title>
 </head>
 <body>
+    <header-component></header-component>
+
+
     
+    <footer-component></footer-component>
 </body>
+<!-- Footer -->
+<script>
+class FooterComponent extends HTMLElement {
+  connectedCallback() {
+    fetch("snippets/footer_simple.html")
+      .then(response => response.text())
+      .then(data => this.innerHTML = data);
+  }
+}
+customElements.define('footer-component', FooterComponent);
+</script>
+
+<!-- Header -->
+<script>
+class HeaderComponent extends HTMLElement {
+  connectedCallback() {
+    fetch("snippets/header_simple.html")
+      .then(response => response.text())
+      .then(data => this.innerHTML = data);
+  }
+}
+customElements.define('header-component', HeaderComponent);
+</script>
 </html>
