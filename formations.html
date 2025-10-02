@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formations</title>
+</head>
+<body>
+    <header-component></header-component>
+
+    <main>
+    <img src="v1/formations.png" alt="">
+    </main>
+
+    <footer-component></footer-component>
+</body>
+
+<!-- Footer -->
+<script>
+class FooterComponent extends HTMLElement {
+  connectedCallback() {
+    fetch("snippets/footer_simple.html")
+      .then(response => response.text())
+      .then(data => this.innerHTML = data);
+  }
+}
+customElements.define('footer-component', FooterComponent);
+</script>
+
+
+<!-- Header -->
+<script>
+class HeaderComponent extends HTMLElement {
+  connectedCallback() {
+    fetch("snippets/header_simple.html")
+      .then(response => response.text())
+      .then(data => this.innerHTML = data);
+  }
+}
+customElements.define('header-component', HeaderComponent);
+</script>
+
+</html>
